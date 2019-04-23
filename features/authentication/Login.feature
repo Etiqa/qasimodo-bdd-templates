@@ -12,18 +12,20 @@ Feature: Login into Application
   Scenario: Login unsuccessful - Wrong Credentials
     Given I am a User
     And I have valid account in the system
-    When the user authenticates with wrong credentials
+    When I authenticate with wrong credentials
     Then I should not be able to login
     And I should see an error message
 
   Scenario: Login unsuccessful - Account does not exist
-    Given I am a Hacker
-    And I have not valid account in the system
+    Given I am a User
+    And I have not a valid account in the system
     When I try to login guessing credentials
     Then I should not be able to login
     And I should see an error message
 
   Scenario: Login unsuccessful - Missing Credentials
     Given I am a User
-    When I try to login without providing all my authentication information
+    When I do not provide all authentication information
+    And I try to login
     Then I should not be able to login
+    And I should see an error message
