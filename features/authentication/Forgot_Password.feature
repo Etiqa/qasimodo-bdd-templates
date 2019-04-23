@@ -21,7 +21,10 @@ Feature: Forgot password
     When I insert my new password twice
     And the passwords match
     Then password should be reset it
-    And I should see a success message
+    And I should see a success message like:
+    """
+    Password has been successfully reset!
+    """
 
   Scenario: Setting new password unsuccessful - Password not matching
     Given I am a User
@@ -29,7 +32,10 @@ Feature: Forgot password
     When I insert my new password twice
     And the passwords do not match
     Then password should not be reset it
-    And I should see an error message
+    And I should see an error message like:
+    """
+    Your password and confirmation password do not match.
+    """
 
   Scenario: Login with new password
     Given I am a User
@@ -45,3 +51,20 @@ Feature: Forgot password
     When I login with old password
     Then I should not be able to login
     And I should see an error message
+
+  Scenario Outline: The new password must be secure: "<TYPE OF ERROR>"
+    Given I am User
+    When I try to update my password to "<PASSWORD>"
+    Then I should see an error message:
+    """
+    Your password must include at least: 8 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+    """
+    And my password should not be reset
+
+    Examples:
+      | TYPE OF ERROR         | PASSWORD |
+      | Missing Lower Case    | P@SSW0RD |
+      | Missing Upercase Case | p@ssw0rd |
+      | Missing Special Char  | Passw0rd |
+      | Missing Number        | P@ssword |
+      | Less Than 8 char      | P@ssw0r  |
