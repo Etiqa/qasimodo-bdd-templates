@@ -17,7 +17,7 @@ Feature: Ordering items
   Scenario Outline: Ordering unsuccessful - Wrong "<INFORMATION>" information
     Given I am a user
     And I have added items into my cart
-    When I do not correctly submit "<INFORMATION>" Information
+    When I submit invalid "<INFORMATION>" Information
     Then my order should not be placed
     And I should see an error message
 
@@ -25,3 +25,10 @@ Feature: Ordering items
       | INFORMATION |
       | Shipping    |
       | Billing     |
+
+  Scenario: Ordering unsuccessful - Empty Cart
+    Given I am a user
+    And I have no items in my cart
+    Then I should not be able to place an order
+    And I should not be able to submit "Shipping Information"
+    And I should not be able to submit "Billing Information"

@@ -40,7 +40,7 @@ Feature: Managing items in the cart
     Given I am a user
     And my cart is empty
     Then I should not be able to remove items
-    And I see a message like:
+    And I should see a message like:
     """
     Your cart is empty
     """
