@@ -62,33 +62,3 @@ The scenario should be written in a way that even people who do not know the fea
 and has been wrote in a way that even a non-technical person can understand how the Login feature should behave under a certain condition. So, write your
 scenarios describing feature's behavior in way that is clear to all your team members and you will dispel misunderstandings and ambiguity.
 
-For sure this feature has more Acceptance Criteria and therefore Scenarios to be considered, and we will be working on them as we go forward in this guide.   
-Think a second about which other behavior should be done by the Login feature! That's it. Login feature should not allow unregistered users to sign into QAsimodo,
-so you must update the Acceptance Criteria and add an Scenario as follow:
-
-    
-    Feature: Login into QAsimodo
-      As a Mark the Tester
-      I want to be able to login in QAsimodo
-      So that I am able to start a private testing session.
-    
-      Make sure:
-      - Username and password are mandatory to login 
-      - Registered users are able to login
-      - Unregistered users are not able to login
-       
-      Scenario: Login successful
-        Given I am Mark the Tester  
-        And I have a valid account on QAsimodo with the following credentials:  
-          | Username | Password |
-          | Mark     | Pas      |              
-        When I correctly submit my account credentials  
-        Then I should be logged in
-      
-      Scenario: Login unsuccessful - Account does not exist
-        Given I am Lauren the Tester
-        And I do not have an account on QAsimodo
-        When I try to login guessing credentials
-        Then I should not be able to login
-
-TBD
