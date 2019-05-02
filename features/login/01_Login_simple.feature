@@ -7,7 +7,7 @@ Feature: Login into QAsimodo - Simple Example
   - Username and password are mandatory to login
   - Registered users are able to login
 
-  Scenario: Login successful
+  Scenario: Login successful - (Simple Example)
     Given I am Mark the Tester
     And I have a valid account on QAsimodo with the following credentials:
       | Username | Password |

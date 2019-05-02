@@ -1,4 +1,4 @@
-# Behavioral Approach of Login feature. Just Functional Requirements
+# Example: Behavioral Approach of Login feature. Just Functional Requirements
 Feature: Login into QAsimodo - Behavioral
   As a Mark the Tester
   I want to be able to login in QAsimodo
@@ -9,7 +9,7 @@ Feature: Login into QAsimodo - Behavioral
   - Registered users are able to login
   - Unregistered users are not able to login
 
-  Scenario: Login successful
+  Scenario: Login successful - (Behavioral)
     Given I am Mark the Tester
     And I have a valid account on QAsimodo with the following credentials:
       | Username | Password |
