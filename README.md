@@ -32,12 +32,17 @@ and with a little practice you'll be able to write your own. Have a look:
 
 As you can see, the Feature has a title and a description. It's a good practice to describe the feature through an Agile user story and the Acceptance Criteria.
 The feature can contain one or more _Scenario_ sections (each with a unique title), describing how a feature should behave in different situations or
-with different input parameters. 
+with different input parameters.  
+_Scenarios_ follow the **Given - When - Then** structure and each _keyword_ has a purpose:
+
+    |**Keyword**| **Purpose**|
+    |Given| Use the given step to define the inital state |  
+    |When | Define the action performed by the user/actor that will trigger the reward/benefit|
+    |Then | Define the expected outcome from the action taken by the user in the _When_ step |
 
 Let’s take a look at simple example of a user signing into QAsimodo.
 
-    
-    Feature: Login into QAsimodo
+    Feature: Login into QAsimodo - Simple Example
       As a Mark the Tester
       I want to be able to login in QAsimodo
       So that I am able to start a private testing session.
@@ -58,7 +63,42 @@ This a complete feature file following the format introduced before. It starts w
 telling us who is the target user or (role), the feature user wants and the reward the user will get. The acceptance criteria are an intrinsic part of the story
 and define the scope of its behavior, giving a share definition, within the team, of when the story can be considered as "done".  
 
-The scenario should be written in a way that even people who do not know the feature will understand it. If you see the scenario in the example, it's descriptive and concise 
+The scenario should be written in a way that even people who do not know the feature will understand it. If you see the scenario in the example above, it's descriptive and concise 
 and has been wrote in a way that even a non-technical person can understand how the Login feature should behave under a certain condition. So, write your
 scenarios describing feature's behavior in way that is clear to all your team members and you will dispel misunderstandings and ambiguity.
 
+For sure this feature has more Acceptance Criteria and therefore Scenarios to be considered, and we will be working on them as we go forward in this guide.   
+Think a second about which other behavior should be done by the Login feature! That's it. Login feature should not allow unregistered users to sign into QAsimodo,
+so you must update the Acceptance Criteria and add an Scenario as follow:
+
+    
+    Behavioral Approach of Login feature. Just Functional Requirements
+    
+    Feature: Login into QAsimodo - Behavioral
+      As a Mark the Tester
+      I want to be able to login in QAsimodo
+      So that I am able to use the Application
+    
+      Make sure:
+      - Username and password are mandatory to login
+      - Registered users are able to login
+      - Unregistered users are not able to login
+    
+      Scenario: Login successful
+        Given I am Mark the Tester
+        And I have a valid account on QAsimodo with the following credentials:
+          | Username | Password |
+          | Mark     | Pass     |
+        When I correctly submit my account credentials
+        Then I should be logged in
+    
+      Scenario: Login unsuccessful - Account does not exist
+        Given I am Lauren the Tester
+        And I do not have an account on QAsimodo
+        When I try to login guessing credentials
+        Then I should not be able to login
+
+Simple right? From a Behavioral point of view, a _login feature_ should allow or not allow access (under some conditions) to the application. So 
+the login feature should be completed now since the functional requirements has been covered.
+
+ 
