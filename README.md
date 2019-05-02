@@ -1,4 +1,4 @@
-# qasimodo-bdd-templates
+# QAsimodo BDD Templates
 
 BDD (Behavioral Driven Development) or Specification by Examples is a methodology for developing software through continuous example-based 
 communication between developers, QAs and BAs. The primary purpose of BDD methodology is to improve communication amongst the stakeholders 
@@ -42,15 +42,15 @@ Let’s take a look at simple example of a user signing into QAsimodo.
       I want to be able to login in QAsimodo
       So that I am able to start a private testing session.
     
-      Acceptance Criteria:
-      - Make sure Username and Password are mandatory to login 
-      - Make sure Registered users are able to login
+      Make sure:
+      - Username and password are mandatory to login
+      - Registered users are able to login
        
       Scenario: Login successful
         Given I am Mark the Tester  
         And I have a valid account on QAsimodo with the following credentials:  
           | Username | Password |
-          | Mark     | P@ssword |              
+          | Mark     | Pass     |              
         When I correctly submit my account credentials  
         Then I should be logged in
     
@@ -61,3 +61,34 @@ and define the scope of its behavior, giving a share definition, within the team
 The scenario should be written in a way that even people who do not know the feature will understand it. If you see the scenario in the example, it's descriptive and concise 
 and has been wrote in a way that even a non-technical person can understand how the Login feature should behave under a certain condition. So, write your
 scenarios describing feature's behavior in way that is clear to all your team members and you will dispel misunderstandings and ambiguity.
+
+For sure this feature has more Acceptance Criteria and therefore Scenarios to be considered, and we will be working on them as we go forward in this guide.   
+Think a second about which other behavior should be done by the Login feature! That's it. Login feature should not allow unregistered users to sign into QAsimodo,
+so you must update the Acceptance Criteria and add an Scenario as follow:
+
+    
+    Feature: Login into QAsimodo
+      As a Mark the Tester
+      I want to be able to login in QAsimodo
+      So that I am able to start a private testing session.
+    
+      Make sure:
+      - Username and password are mandatory to login 
+      - Registered users are able to login
+      - Unregistered users are not able to login
+       
+      Scenario: Login successful
+        Given I am Mark the Tester  
+        And I have a valid account on QAsimodo with the following credentials:  
+          | Username | Password |
+          | Mark     | Pas      |              
+        When I correctly submit my account credentials  
+        Then I should be logged in
+      
+      Scenario: Login unsuccessful - Account does not exist
+        Given I am Lauren the Tester
+        And I do not have an account on QAsimodo
+        When I try to login guessing credentials
+        Then I should not be able to login
+
+TBD
