@@ -36,7 +36,7 @@ And after that you write the scenario as the following example:
         And I navigate to "https://{mydomain}.qasimodo.io"
         Then I should land on Qasimodo Sign In page
         When I enter "Mark" into the Username text field
-        And I enter "P@ssword" into the Password text field
+        And I enter "Pass" into the Password text field
         And I click in "Login" button
         Then I should be logged in
   
