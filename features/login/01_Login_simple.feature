@@ -1,3 +1,4 @@
+# Simple Example: Successful Login
 Feature: Login into QAsimodo - Simple Example
   As a Mark the Tester
   I want to be able to login in QAsimodo

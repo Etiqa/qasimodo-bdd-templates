@@ -166,7 +166,7 @@ The above will be the scenarios you should add to your feature file! Don't forge
         Then I should not be able to login
         And I should see an authentication error message as:
         """
-        Your credentials are wrong!
+        Username and/or Password are wrong!
         """
     
         Examples:
@@ -174,16 +174,18 @@ The above will be the scenarios you should add to your feature file! Don't forge
           | Username   |
           | Password   |  
 
-_For information about how to use Scenario Outline click [here](tbd)_
-_For information about how to manage tags (Ex: @security) click [here](tbd)_
+_For information about how to use Scenario Outline click [here](tbd)_ 
+_For information about how to manage tags in QAsimodo (Ex: @security) click [here](tbd)_
 
-Has been the scenario written as you thought? Do you think a non-technical person will understand (through the examples) how the Login feature should behave under the NFR?
+Has been the scenario written as you thought? Do you think a non-technical person will understand (through the examples) how the Login feature should behave under the NFR? 
 Absolutely yes! The scope is to make others understand that when logging in with wrong username or password, the same outcome (error message) should 
 be displayed by the system for security reasons. Moreover, see how _declarative_ the scenario is even describing NFR. [(How to write good scenarios)](TBD)
 
 You can detail, deeper and deeper, you feature file (through your scenarios) as you need! It's up to you and the requirements that your feature or
 system needs, in order to achieve the customer reward/satisfaction. Feel free to explore our [**_BDD Templates Library_**](tbd)! There you will find
 many useful example feature files that will help you write your owns.
+
+
 
 
 

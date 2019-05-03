@@ -35,7 +35,7 @@ Feature: Login into QAsimodo
     Then I should not be able to login
     And I should see an authentication error message as:
     """
-    Your credentials are wrong!
+    Username and/or Password are wrong!
     """
 
     Examples:
