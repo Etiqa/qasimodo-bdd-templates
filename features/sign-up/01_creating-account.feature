@@ -6,10 +6,10 @@ Feature: Creating QAsimodo Account
   Make sure:
   - Email address and password are the account credentials
   - It's possible to access to QAsimodo with new account credentials
-  - It's not possible to have multiple account with the same Email address (identity information)
-  - Verification Email is sent to the User Email address (User is able to verify the Email address)
+  - It's not possible to create new account credentials with an already existing Email address (identity information)
+  - User is able to verify the Email address
   - Password cannot be set until Email address has been verify
-  - Password is required twice before is set to avoid mistyping (Password is set only if both password match)
+  - Password is required twice before is set to avoid mistyping (Password is set only if both passwords match)
   - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
   - User is redirected to QAsimodo sign in page once the account credentials has been created
 
@@ -45,15 +45,28 @@ Feature: Creating QAsimodo Account
     And my Email address is "lauren@example.com"
     And my Email address is not associated with a QAsimodo account
     When I submit my Email address to create a new account
-    Then I should receive a "Verification" email to my Email Address
-    And I should be able to verify my Email address
+    Then I should be able to verify my Email address
+
+  @usability
+  Scenario: User must repeat new password to avoid mistyping
+    Given I am Lauren the Tester
+    And I have validated my Email address
+    But I have not yet set a password for my new account
+    When I submit the following information
+      | New Password | Confirm New Password |
+      | P@ssw0rd     | P@ssw0rd!            |
+    Then I should not be able to set my password
+    And I should get an error message as:
+    """
+    Passwords must match!
+    """
 
   @security
   Scenario Outline: The new password must be secure: <TYPE OF ERROR>
     Given I am Lauren the Tester
     And I have verified my Email address
     But I have not yet set a password for my new account
-    When I submit the following password with <TYPE OF ERROR>
+    When I submit a "<TYPE OF ERROR>" password as:
       | New Password | Confirm New Password |
       | <PASSWORD>   | <PASSWORD>           |
     Then I should not be able to set my password
@@ -71,16 +84,3 @@ Feature: Creating QAsimodo Account
       | Less Than 8 char         | P@ssw0r  |
 
 
-  @usability
-  Scenario: User must repeat new password to avoid mistyping
-    Given I am Lauren the Tester
-    And I have validated my Email address
-    But I have not yet set a password for my new account
-    When I submit the following information
-      | New Password | Confirm New Password |
-      | P@ssw0rd     | P@ssw0rd!            |
-    Then I should not be able to set my password
-    And I should get an error message as:
-    """
-    New password and Confirm new password must match!.
-    """

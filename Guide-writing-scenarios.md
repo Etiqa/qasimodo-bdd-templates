@@ -87,8 +87,6 @@ Is it better right? Do you see big differences?
 
 #### 2) Do not describe the implementation
 
-Scenarios are a tool for design .. innovation etc
-
 When writing your examples focus on the "**What**", not on the "How". This is very important because in this way you give your team the freedom 
 to determine the best implementation of the feature. 
 
@@ -111,7 +109,7 @@ Keep in mind the purpose of each keyword when writing steps.
 
 Avoid writing actions in the Given steps. They are meant to define an initial state not exercise a behavior. You should write Given steps in present or present perfect tense.
 
-When step are meant to indicate that an action is presently happening, so write When steps using action present tense. (avoid past tense)
+When steps are meant to indicate that an action is presently happening, so write When steps using action present tense. (avoid past tense)
 
 Then steps should not be written as a future tense since this leads to be more procedural (imperative) over behavioral (declarative). Write your Then tenses in present and using some conditionals when required.  
 
