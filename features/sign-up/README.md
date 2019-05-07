@@ -2,8 +2,6 @@
 
 Let's see how to write a feature file for creating  QAsimodo account credentials
 
-#### 1) Define the user history and the Acceptance Criteria
-
 Start writing the user story. The user story should identify an actor, the feature the actor wants and the outcome or business value he will get. So, think about who is the actor
 interested about having QAsimodo credentials? Which is the reward/benefit the actor will get through the feature? Have a look to our suggestion:  
 
@@ -56,7 +54,7 @@ Now let's work with some Non-Functional requirements that should be taken into a
 
 As in the [_Login Example_](TBD), the security team aware you that the _creating QAsimodo credentials feature_ must have into account the following specifications:
 * Users won't be able to set a password until they do not confirm their Email address to avoid some simple bots.
-* Password must be secure, so it must fulfill the following characteristics: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].  
+* Password must be [secure](https://www.owasp.org/index.php/Testing_for_Weak_password_policy_(OTG-AUTHN-007)), so it must fulfill the following characteristics: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].  
 
 On the other hand for usability reasons:
 * Password should be required twice, before is set, to avoid mistyping.
@@ -200,12 +198,24 @@ verify their email address and 2) User must repeat new password to avoid mistypi
 _For information about how to manage tags in QAsimodo (Ex: @usability) click [here](tbd)_
 
 
+Finally you have to cover the last acceptance criteria, which is the password validation! We suggest to use the scenario outline [(Read about how to use scenario outline)](tbd), since different kind 
+of inputs will generate the same feature behaviour (ex: password won't be set). Which examples you would write in order to ensure the password fulfill the security requirements
+(more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].)? 
+Which cases would you consider? 
 
-Finally you have to cover the last acceptance criteria, which is the password validation! We suggest to use the scenario outline, since different kind 
-of inputs will generate the same feature behaviour (outcome). 
-Do not mix the password validation`in order to make a great testing
+We suggest to write 'mutually exclusive' examples for each requirement, which means you should focus only the password requirement you are describing. For instance,
+if you are describing the password must have 'one lower case character' case, then write a password example that meets all other requirements, as 'P@SSW0RD'(this password is longer than 7 chars, has an upper case char, one numeric char and one special char. Only misses the lower case char).     
+Review other examples in the following table:
 
-At the end the feature file should be:
+    | EXAMPLE                  | PASSWORD |
+    | Missing a Lower Case     | P@SSW0RD |
+    | Missing an Upercase Case | p@ssw0rd |
+    | Missing a Special Char   | Passw0rd |
+    | Missing a Number         | P@ssword |
+    | Less Than 8 char         | P@ssw0r  |
+
+All password examples above meet with all security requirements except the one that you are describing. Now with the examples before, you are able to write
+the scenario outline describing the behavior:
 
     Feature: Creating QAsimodo Account
       As Lauren the Tester
@@ -291,4 +301,4 @@ At the end the feature file should be:
           | Missing a Special Char   | Passw0rd |
           | Missing a Number         | P@ssword |
           | Less Than 8 char         | P@ssw0r  |
-      
+
