@@ -3,7 +3,7 @@
 Now it's your turn to practice! Do you feel capable to write a feature file describing the behavior of a 'Reset Password Feature'? Feel free to review 
 the examples we have introduced to you, at anytime. If you feel blocked try to follow this steps:
 1) Define the User Story
-2) Define the Acceptance Criteria for your feature: Both the Functional and Non-Functional requirements
+2) Define the Acceptance Criteria for your feature covering both the Functional and Non-Functional requirements
 3) Write the first scenario covering the happy path
 4) Write the exception paths 
 4) Write scenarios in order to cover all your acceptance criteria
