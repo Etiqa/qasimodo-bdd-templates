@@ -28,7 +28,7 @@ Feature: Forgot password
     And I have a QAsimodo account with the following credentials
       | Email              | Password |
       | lauren@example.com | P@ssw0rd |
-    When I reset my password to:
+    When I successfully reset my password to:
       | New Password |
       | NewP@ssw0rd  |
     Then I should be able to login into QAsimodo with "NewP@ssw0rd" password

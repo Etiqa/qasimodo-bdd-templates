@@ -134,8 +134,9 @@ The above will be the scenarios you should add to your feature file! Don't forge
           | Username   |
           | Password   |  
 
-_For information about how to use Scenario Outline click [here](tbd)_ 
-_For information about how to manage tags in QAsimodo (Ex: @security) click [here](tbd)_
+_For information about how to use Scenario Outline click [here](tbd)._
+   
+_For information about how to manage tags in QAsimodo (Ex: @security) click [here](tbd)_.
 
 Has been the scenario written as you thought? Do you think a non-technical person will understand (through the examples) how the Login feature should behave under the NFR? 
 Absolutely yes! The scope is to make others understand that when logging in with wrong username or password, the same outcome (error message) should 

@@ -19,7 +19,7 @@ Feature: Login into QAsimodo
     When I correctly submit my account credentials
     Then I should be logged in
 
-  Scenario: Login unsuccessful - Unregistered user
+  Scenario: Login unsuccessful - Unregistered User
     Given I am Lauren the Tester
     And I do not have an account on QAsimodo
     When I try to login guessing credentials
@@ -44,7 +44,7 @@ Feature: Login into QAsimodo
       | Password   |
 
   @usability
-  Scenario: Login unsuccessful - Missing Authentication Credentials
+  Scenario: Login unsuccessful - Missing authentication credentials
     Given I am Mark the Tester
     And I have a valid account on QAsimodo with the following credentials:
       | Username | Password |

@@ -61,7 +61,7 @@ On the other hand for usability reasons:
 * Email's user should be verify to avoid mistyping.
 * Users should be redirected to the sign in page once the account has been created
 
-How would you write/modify your feature file? How many new scenarios should you write? Before moving forward, remember: _one scenario should cover one behavior_
+How would you write/modify your feature file? How many new scenarios should you write? Before moving forward, remember: _one scenario should cover one behavior._  
 First of all, update your acceptance criteria, as follows:
 
     Feature: Creating QAsimodo Account
@@ -195,7 +195,7 @@ verify their email address and 2) User must repeat new password to avoid mistypi
         Passwords must match!
         """
         
-_For information about how to manage tags in QAsimodo (Ex: @usability) click [here](tbd)_
+_For information about how to manage tags in QAsimodo (Ex: @usability) click [here](tbd)._
 
 
 Finally you have to cover the last acceptance criteria, which is the password validation! We suggest to use the scenario outline [(Read about how to use scenario outline)](tbd), since different kind 
