@@ -8,17 +8,17 @@ Feature: Creating QAsimodo Account
   - It's possible to access to QAsimodo with new account credentials
   - It's not possible to create new account credentials with an already existing Email address (identity information)
   - User is able to verify the Email address
-  - Password cannot be set until Email address has been verify
+  - Password cannot be set until Email address has been verified
   - Password is required twice before is set to avoid mistyping (Password is set only if both passwords match)
-  - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-  - User is redirected to QAsimodo sign in page once the account credentials has been created
+  - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+  - User is redirected to QAsimodo sign in page once the account credentials have been created
 
-  Scenario: Creating account credentials successful
+  Scenario: Successful account creation
     Given I am Lauren the Tester
     And my Email address is "lauren@example.com"
     And my Email address is not associated with a QAsimodo account
     When I validate my Email address
-    And I correctly set a password that follow the standard
+    And I correctly set a password that follows the standards
     Then my account credentials should be created
     And I should be redirected to QAsimodo sign in page
 
@@ -30,20 +30,20 @@ Feature: Creating QAsimodo Account
     When I login with my new credentials
     Then I should be logged into QAsimodo
 
-  Scenario: Creating account credentials unsuccessful - Email address already registered
+  Scenario: Unsuccessful account creation - Email address already registered
     Given I am Lauren the Tester
-    And I have a valid QAsimodo account with the following credential:
+    And I have a valid QAsimodo account with the following credentials:
       | Email Address      |
       | lauren@example.com |
     When I try to create a new account with "lauren@example.com" email address
     Then I should not be able to create a new account
 
   @usability @security
-    # Usability because deals with mistyping. Security because prevents some simple bots
-  Scenario: Users should be able to verify they email address
+    # Usability because it deals with mistyping. Security because prevents some simple bots
+  Scenario: User should be able to verify the email address
     Given I am Lauren the Tester
     And my Email address is "lauren@example.com"
-    And my Email address is not associated with a QAsimodo account
+    And my Email address is not associated as a QAsimodo account
     When I submit my Email address to create a new account
     Then I should be able to verify my Email address
 
@@ -76,11 +76,11 @@ Feature: Creating QAsimodo Account
     """
 
     Examples:
-      | TYPE OF ERROR            | PASSWORD |
-      | Missing a Lower Case     | P@SSW0RD |
-      | Missing an Upercase Case | p@ssw0rd |
-      | Missing a Special Char   | Passw0rd |
-      | Missing a Number         | P@ssword |
-      | Less Than 8 char         | P@ssw0r  |
+      | TYPE OF ERROR        | PASSWORD |
+      | Missing Lowercase    | P@SSW0RD |
+      | Missing Uppercase    | p@ssw0rd |
+      | Missing Special Char | Passw0rd |
+      | Missing Number       | P@ssword |
+      | Less Than 8 char     | P@ssw0r  |
 
 

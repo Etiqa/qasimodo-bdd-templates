@@ -1,6 +1,6 @@
 # Login into QAsimodo Feature
 
-### BDD Functional Requirements
+### BDD for Functional Requirements
 Let’s take a look at simple example of a user signing into QAsimodo.
 
     Feature: Login into QAsimodo - Simple Example
@@ -60,10 +60,10 @@ so you must update the Acceptance Criteria and add a Scenario as follows:
         Then I should not be able to login
 
 Simple right? From a Behavioral point of view, a _login feature_ should allow or not allow access (under some conditions) to the application. So 
-the login feature should be complete now since the functional requirements has been covered.
+the login feature should be complete now since the functional requirements have been covered.
 
 ## BDD for Non-functional Requirements
-Non-functional requirements (NFR), known as 'quality attributes', specifies criteria that can be used to evaluate the system operation instead of a 
+Non-functional requirements (NFR), known as 'quality attributes', specify criteria that can be used to evaluate the system operation instead of a 
 specific behavior. NFRs define how a system is supposed to be, rather than what a system is supposed to do. Some NFRs examples are:  
 * Security
 * Usability
@@ -75,16 +75,16 @@ specific behavior. NFRs define how a system is supposed to be, rather than what 
 You are able to describe non-functional requirements through BDD. NFRs should be considered as design constraints within your team.  
 
 Let's move forward with our login example and integrate some NFRs!
-Suppose the security department aware you that the _login feature_ must follow the [OWASP](https://www.owasp.org/index.php/Main_Page) (Open Web Application Security Project) standards.
-For instance, security department states that, when a user try to login submitting wrong credentials, the system should not reveal if a username exists
-or if the provided password is wrong. This information can used by an attacker to obtain a list of user on system. In summary your login feature should response with the same error message
+Suppose the security department informs you that the _login feature_ must follow the [OWASP](https://www.owasp.org/index.php/Main_Page) standards (Open Web Application Security Project).
+For instance, security department states that, the system should not reveal if a username exists, or if the provided password is wrong, when a user tries to login submitting wrong credentials.
+This information can be used by an attacker to obtain a list of users on system. In summary, your login feature should return the same error message
 for every failed attempt of authentication. [More info](https://www.owasp.org/index.php/Testing_for_Account_Enumeration_and_Guessable_User_Account_(OTG-IDENT-004)) 
 
 How would you add this design constraint (NFR) into the login feature file? Which scenarios would you consider?
 
 The cases you should consider are (both of them should trigger the same error message): 
-1. The user login with wrong username
-2. The user login with wrong password  
+1. User login with wrong username
+2. User login with wrong password  
 
 The above will be the scenarios you should add to your feature file! Don't forget to insert the NFR to the Acceptance Criteria! Have a look:
 
@@ -99,7 +99,7 @@ The above will be the scenarios you should add to your feature file! Don't forge
       - Username and password are mandatory to login
       - Registered users are able to login
       - Unregistered users are not able to login
-      - Authentication with wrong credentials follow OWASP standards: 
+      - Authentication with wrong credentials follows OWASP standards: 
             * System should answer in the same way for every failed attempt of authentication (Examples: wrong username, wrong password)
     
       Scenario: Login successful
@@ -138,13 +138,13 @@ _For information about how to use Scenario Outline click [here](tbd)._
    
 _For information about how to manage tags in QAsimodo (Ex: @security) click [here](tbd)_.
 
-Has been the scenario written as you thought? Do you think a non-technical person will understand (through the examples) how the Login feature should behave under the NFR? 
+Was the scenario written as you thought? Do you think a non-technical person will understand (through the examples) how the Login feature should behave under the NFR? 
 Absolutely yes! The scope is to make others understand that when logging in with wrong username or password, the same outcome (error message) should 
 be displayed by the system for security reasons. Moreover, see how _declarative_ the scenario is even describing NFR. [(How to write good scenarios)](TBD)
 
-You can detail, deeper and deeper, you feature file (through your scenarios) as you need! It's up to you and the requirements that your feature or
-system needs, in order to achieve the customer reward/satisfaction. Feel free to explore our [**_BDD Templates Library_**](tbd)! There you will find
-many useful example feature files that will help you write your owns.
+You can detail your feature file through scenarios, deeper and deeper, as you need! It's up to you and the requirements that your feature or
+system needs, in order to achieve the customer reward/satisfaction. Feel free to explore our [**_BDD Templates Library_**](tbd)! There, you will find
+many useful examples of feature files that will help you write your owns.
 
 
 

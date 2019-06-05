@@ -1,6 +1,6 @@
 # Creating QAsimodo Credentials
 
-Let's see how to write a feature file for creating  QAsimodo account credentials
+Let's see how to write a feature file for creating QAsimodo account credentials
 
 Start writing the user story. The user story should identify an actor, the feature the actor wants and the outcome or business value he will get. So, think about who is the actor
 interested about having QAsimodo credentials? Which is the reward/benefit the actor will get through the feature? Have a look to our suggestion:  
@@ -10,10 +10,10 @@ interested about having QAsimodo credentials? Which is the reward/benefit the ac
     I want to create a QAsimodo account by entering email address and password
     so that I am able to start using QAsimodo   
 
-The major QAsimodo actors are the Testers and they want to be able to have their own access credentials so that they are able to use the application and have a private testing session.
+The major QAsimodo actors are the Testers and they want to have their own access credentials so that they are able to use the application and have a private testing session.
 
-Now, start to write the acceptance criteria. Think about which are the user requirements that, if are fulfilled, the end product (feature) will be as expected by the customer? Remember that the acceptance criteria
-should state the intent of the client and not the solution (how). It is up to the team to find the solution.
+Start writing the acceptance criteria. Think about the user requirements that, if fulfilled, will make the final product (feature) relevant to the customer's requirements. Remember that the acceptance criteria
+should indicate the customer's intent (what) and not the solution (how). It is up to the development team to find the solution.
 
 You can start writing something like:
 
@@ -23,15 +23,15 @@ You can start writing something like:
       - It's not possible to create new account credentials with an already existing Email address (identity information)  
              
 
-Does that make sense? Sure, you have to ensure that new registered users are able to login into QAsimodo (main feature purpose), and of course that 
+Does it make sense? Sure, you have to ensure that new registered users are able to login into QAsimodo (main feature purpose), and of course that 
 users have a unique ID in the system.
 
-Now you are able to start writing your feature behavioral examples (scenarios). How the feature should behave? Think about: Under which conditions the feature will 
+Now you are able to start writing your feature behavioral examples (scenarios). How should the feature behave? Think about: Under which conditions the feature will 
 successfully create the credentials? Under which conditions the feature won't create the credentials? Can the same user register multiple times?     
-A good practice is start with the happy path, which in this case will be something like:
+A good practice is to start with the happy path, which in this case will be something like:
 
 
-    Scenario: Creating account credentials successful
+    Scenario: Successful account creation 
         Given I am Lauren the Tester
         And my Email address is not associated with a QAsimodo account
         When I provide my email address
@@ -39,27 +39,27 @@ A good practice is start with the happy path, which in this case will be somethi
         Then my account credentials should be created
         And I should be able to login with my new credentials
         
-After the happy path you should write all exception (negative) paths. For now, we can write the example for when an email address is already registered on the system:
+After the happy path you should write all the exception (or negative) paths. For now, we can write the example for when an email address is already registered in the system:
 
-    Scenario: Creating account credentials unsuccessful - Email address already registered
+    Scenario: Unsuccessful account creation  - Email address already registered
         Given I am Lauren the Tester
-        And my Email address is already registered with a QAsimodo account
+        And my Email address is already registered as a QAsimodo account
         When I provide my email address
         And I set a password 
         Then I should not be able to create my account credentials
 
 That's it! No problems, right?
 
-Now let's work with some Non-Functional requirements that should be taken into account within this feature! We'll have a look to some security and usability ones.  
+Now let's work with some Non-Functional requirements that should be taken into account within this feature! We'll have a look to some security and usability requirements.  
 
-As in the [_Login Example_](TBD), the security team aware you that the _creating QAsimodo credentials feature_ must have into account the following specifications:
+As in the [_Login Example_](TBD), the security team informs you that the _creating QAsimodo credentials feature_ must take into account the following specifications:
 * Users won't be able to set a password until they do not confirm their Email address to avoid some simple bots.
 * Password must be [secure](https://www.owasp.org/index.php/Testing_for_Weak_password_policy_(OTG-AUTHN-007)), so it must fulfill the following characteristics: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].  
 
 On the other hand for usability reasons:
-* Password should be required twice, before is set, to avoid mistyping.
-* Email's user should be verify to avoid mistyping.
-* Users should be redirected to the sign in page once the account has been created
+* Password should be required twice, before being set, to avoid mistyping.
+* User's email should be verify to avoid mistyping.
+* Users should be redirected to the sign in page once the account has been created.
 
 How would you write/modify your feature file? How many new scenarios should you write? Before moving forward, remember: _one scenario should cover one behavior._  
 First of all, update your acceptance criteria, as follows:
@@ -74,10 +74,10 @@ First of all, update your acceptance criteria, as follows:
       - It's possible to access to QAsimodo with new account credentials
       - It's not possible to create new account credentials with an already existing Email address (identity information)
       - Verification Email is sent to the User Email address (User is able to verify the Email address)
-      - Password cannot be set until Email address has been verify
-      - Password is required twice before is set to avoid mistyping (Password is set only if both passwords match)
-      - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-      - User is redirected to QAsimodo sign in page once the account credentials has been created
+      - Password cannot be set until Email address has been verified
+      - Password is required twice before it is set to avoid mistyping (Password is set only if both passwords match)
+      - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+      - User is redirected to QAsimodo sign in page once the account credentials have been created
 
 Now, review the scenarios we presented before. Are they still congruent with the acceptance criteria? They are not! How would you update them? Have a look:
 
@@ -92,17 +92,17 @@ Now, review the scenarios we presented before. Are they still congruent with the
      - It's possible to access to QAsimodo with new account credentials
      - It's not possible to create new account credentials with an already existing Email address (identity information)
      - Verification Email is sent to the User Email address (User is able to verify the Email address)
-     - Password cannot be set until Email address has been verify
-     - Password is required twice before is set to avoid mistyping (Password is set only if both passwords match)
-     - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-     - User is redirected to QAsimodo sign in page once the account credentials has been created
+     - Password cannot be set until Email address has been verified
+     - Password is required twice before it is set to avoid mistyping (Password is set only if both passwords match)
+     - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+     - User is redirected to QAsimodo sign in page once the account credentials have been created
 
-     Scenario: Creating account credentials successful
+     Scenario: Successful account creation
        Given I am Lauren the Tester
        And my Email address is "lauren@example.com"
        And my Email address is not associated with a QAsimodo account
        When I validate my Email address
-       And I correctly set a password that follow the standard
+       And I correctly set a password that follows the standards
        Then my account credentials should be created
        And I should be redirected to QAsimodo sign in page
 
@@ -114,9 +114,9 @@ Now, review the scenarios we presented before. Are they still congruent with the
        When I login with my new credentials
        Then I should be logged into QAsimodo
 
-     Scenario: Creating account credentials unsuccessful - Email address already registered
+     Scenario: Unsuccessful account creation - Email address already registered
        Given I am Lauren the Tester
-       And I have a valid QAsimodo account with the following credential:
+       And I have a valid QAsimodo account with the following credentials:
          | Email Address      |
          | lauren@example.com |
        When I try to create a new account with "lauren@example.com" email address
@@ -142,17 +142,17 @@ verify their email address and 2) User must repeat new password to avoid mistypi
       - It's possible to access to QAsimodo with new account credentials
       - It's not possible to create new account credentials with an already existing Email address (identity information)
       - Verification Email is sent to the User Email address (User is able to verify the Email address)
-      - Password cannot be set until Email address has been verify
-      - Password is required twice before is set to avoid mistyping (Password is set only if both passwords match)
-      - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-      - User is redirected to QAsimodo sign in page once the account credentials has been created
+      - Password cannot be set until Email address has been verified
+      - Password is required twice before it is set to avoid mistyping (Password is set only if both passwords match)
+      - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+      - User is redirected to QAsimodo sign in page once the account credentials have been created
     
-      Scenario: Creating account credentials successful
+      Scenario: Successful account creation 
         Given I am Lauren the Tester
         And my Email address is "lauren@example.com"
         And my Email address is not associated with a QAsimodo account
         When I validate my Email address
-        And I correctly set a password that follow the standard
+        And I correctly set a password that follows the standards
         Then my account credentials should be created
         And I should be redirected to QAsimodo sign in page
     
@@ -164,17 +164,17 @@ verify their email address and 2) User must repeat new password to avoid mistypi
         When I login with my new credentials
         Then I should be logged into QAsimodo
     
-      Scenario: Creating account credentials unsuccessful - Email address already registered
+      Scenario: Unsuccessful account creation - Email address already registered
         Given I am Lauren the Tester
-        And I have a valid QAsimodo account with the following credential:
+        And I have a valid QAsimodo account with the following credentials:
           | Email Address      |
           | lauren@example.com |
         When I try to create a new account with "lauren@example.com" email address
         Then I should not be able to create a new account
     
       @usability @security
-        # Usability because deals with mistyping. Security because prevents some simple bots
-      Scenario: Users should be able to verify they email address
+        # Usability because it deals with mistyping. Security because prevents some simple bots
+      Scenario: User should be able to verify the email address
         Given I am Lauren the Tester
         And my Email address is "lauren@example.com"
         And my Email address is not associated with a QAsimodo account
@@ -199,23 +199,23 @@ _For information about how to manage tags in QAsimodo (Ex: @usability) click [he
 
 
 Finally you have to cover the last acceptance criteria, which is the password validation! We suggest to use the scenario outline [(Read about how to use scenario outline)](tbd), since different kind 
-of inputs will generate the same feature behaviour (ex: password won't be set). Which examples you would write in order to ensure the password fulfill the security requirements
-(more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].)? 
+of inputs will generate the same feature behaviour (e.g. password won't be set). Which examples would you write in order to ensure that the password fulfills the security requirements
+(more than 7 characters, one lower case and one upper case alpha character: {a-z, A-Z}, one non-alphanumeric character: {!@#$%^&*()} and one numeric character: {0-9} )? 
 Which cases would you consider? 
 
-We suggest to write 'mutually exclusive' examples for each requirement, which means you should focus only the password requirement you are describing. For instance,
-if you are describing the password must have 'one lower case character' case, then write a password example that meets all other requirements, as 'P@SSW0RD'(this password is longer than 7 chars, has an upper case char, one numeric char and one special char. Only misses the lower case char).     
+We suggest to write 'mutually exclusive' examples for each requirement, which means you should focus only on the password requirement you are describing. For instance,
+if you are describing that the password must have 'one lower case character' case, then write a password example that meets all other requirements.     
 Review other examples in the following table:
 
-    | EXAMPLE                  | PASSWORD |
-    | Missing a Lower Case     | P@SSW0RD |
-    | Missing an Upercase Case | p@ssw0rd |
-    | Missing a Special Char   | Passw0rd |
-    | Missing a Number         | P@ssword |
-    | Less Than 8 char         | P@ssw0r  |
+    | EXAMPLE              | PASSWORD |
+    | Missing Lowercase    | P@SSW0RD |
+    | Missing Uppercase    | p@ssw0rd |
+    | Missing Special Char | Passw0rd |
+    | Missing Number       | P@ssword |
+    | Less Than 8 char     | P@ssw0r  |
 
-All password examples above meet with all security requirements except the one that you are describing. Now with the examples before, you are able to write
-the scenario outline describing the behavior:
+All password examples above meet all the security requirements except the one that you are describing. With the examples above, you are now able to write
+the scenario outline that describes the behavior:
 
     Feature: Creating QAsimodo Account
       As Lauren the Tester
@@ -227,17 +227,17 @@ the scenario outline describing the behavior:
       - It's possible to access to QAsimodo with new account credentials
       - It's not possible to create new account credentials with an already existing Email address (identity information)
       - User is able to verify the Email address
-      - Password cannot be set until Email address has been verify
-      - Password is required twice before is set to avoid mistyping (Password is set only if both passwords match)
-      - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-      - User is redirected to QAsimodo sign in page once the account credentials has been created
+      - Password cannot be set until Email address has been verified
+      - Password is required twice before it is set to avoid mistyping (Password is set only if both passwords match)
+      - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+      - User is redirected to QAsimodo sign in page once the account credentials have been created
 
-      Scenario: Creating account credentials successful
+      Scenario: Successful account creation
         Given I am Lauren the Tester
         And my Email address is "lauren@example.com"
         And my Email address is not associated with a QAsimodo account
         When I validate my Email address
-        And I correctly set a password that follow the standard
+        And I correctly set a password that follows the standards
         Then my account credentials should be created
         And I should be redirected to QAsimodo sign in page
 
@@ -249,9 +249,9 @@ the scenario outline describing the behavior:
         When I login with my new credentials
         Then I should be logged into QAsimodo
 
-      Scenario: Creating account credentials unsuccessful - Email address already registered
+      Scenario: Unsuccessful account creation - Email address already registered
         Given I am Lauren the Tester
-        And I have a valid QAsimodo account with the following credential:
+        And I have a valid QAsimodo account with the following credentials:
           | Email Address      |
           | lauren@example.com |
         When I try to create a new account with "lauren@example.com" email address
@@ -259,7 +259,7 @@ the scenario outline describing the behavior:
 
       @usability @security
         # Usability because deals with mistyping. Security because prevents some simple bots
-      Scenario: Users should be able to verify they email address
+      Scenario: User should be able to verify the email address
         Given I am Lauren the Tester
         And my Email address is "lauren@example.com"
         And my Email address is not associated with a QAsimodo account
@@ -295,10 +295,10 @@ the scenario outline describing the behavior:
         """
 
         Examples:
-          | TYPE OF ERROR            | PASSWORD |
-          | Missing a Lower Case     | P@SSW0RD |
-          | Missing an Upercase Case | p@ssw0rd |
-          | Missing a Special Char   | Passw0rd |
-          | Missing a Number         | P@ssword |
-          | Less Than 8 char         | P@ssw0r  |
+          | TYPE OF ERROR        | PASSWORD |
+          | Missing Lowercase    | P@SSW0RD |
+          | Missing Uppercase    | p@ssw0rd |
+          | Missing Special Char | Passw0rd |
+          | Missing Number       | P@ssword |
+          | Less Than 8 char     | P@ssw0r  |
 

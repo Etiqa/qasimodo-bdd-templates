@@ -82,11 +82,11 @@ Feature: Update password
     """
 
     Examples:
-      | TYPE OF ERROR            | PASSWORD |
-      | Missing a Lower Case     | P@SSW0RD |
-      | Missing an Upercase Case | p@ssw0rd |
-      | Missing a Special Char   | Passw0rd |
-      | Missing a Number         | P@ssword |
-      | Less Than 8 char         | P@ssw0r  |
+      | TYPE OF ERROR        | PASSWORD |
+      | Missing Lowercase    | P@SSW0RD |
+      | Missing Uppercase    | p@ssw0rd |
+      | Missing Special Char | Passw0rd |
+      | Missing Number       | P@ssword |
+      | Less Than 8 char     | P@ssw0r  |
 
 

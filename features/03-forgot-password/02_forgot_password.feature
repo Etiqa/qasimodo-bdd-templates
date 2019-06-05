@@ -1,31 +1,31 @@
 Feature: Forgot password
-  As a Lauren the Tester
+  As Lauren the Tester
   I want to be able to reset my password
-  So that I can access to QAsimodo even if I have forgot my current password
+  So that I can access to QAsimodo even if I forgot my current password
 
   Make sure:
-  - It's possible to request reset password
+  - It's possible to request to reset the password
   - It's possible to access to QAsimodo with new password account
-  - It's not possible to access to QAsimodo with old password account
-  - Password cannot be reset until user identity has been verify (ex: through Email address)
+  - After reset, it's not possible to access to QAsimodo with the old password
+  - Password cannot be reset until user identity has been verified (e.g. through Email address)
   - Users are able to verify their identity
-  - Password is required twice before is reset to avoid mistyping (Password is reset only if both passwords match)
-  - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-  - User is redirected to QAsimodo sign in page once the password has been reset it
+  - Password is required twice before it is reset to avoid mistyping (Password is reset only if both passwords match)
+  - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+  - User is redirected to QAsimodo sign in page once the password is reset
 
-  Scenario: Reset password successful
+  Scenario: Successful password reset
     Given I am Lauren the Tester
     And I have a QAsimodo account with the following email: "lauren@example.com"
     But I have forgot my password
     When I request to reset my password
     And I validate my Email address
-    And I correctly set a new password that follow the security standard
+    And I correctly set a new password that follows the security standard
     Then my new password should be set
     And I should be redirected to QAsimodo sign in page
 
   Scenario: Once the password has been reset, Users should be able to access to QAsimodo with the new password
     Given I am Lauren the Tester
-    And I have a QAsimodo account with the following credentials
+    And I have a QAsimodo account with the following credentials:
       | Email              | Password |
       | lauren@example.com | P@ssw0rd |
     When I successfully reset my password to:
@@ -45,8 +45,8 @@ Feature: Forgot password
 
 
   @usability @security
-    # Usability because deals with mistyping. Security because prevents some simple bots
-  Scenario: Users should be able to verify they email address
+    # Usability because it deals with mistyping. Security because prevents some simple bots
+  Scenario: User should be able to verify the email address
     Given I am Lauren the Tester
     And my Email address is "lauren@example.com"
     When I request to reset my password
@@ -83,11 +83,11 @@ Feature: Forgot password
     """
 
     Examples:
-      | TYPE OF ERROR            | PASSWORD |
-      | Missing a Lower Case     | P@SSW0RD |
-      | Missing an Upercase Case | p@ssw0rd |
-      | Missing a Special Char   | Passw0rd |
-      | Missing a Number         | P@ssword |
-      | Less Than 8 char         | P@ssw0r  |
+      | TYPE OF ERROR        | PASSWORD |
+      | Missing Lowercase    | P@SSW0RD |
+      | Missing Uppercase    | p@ssw0rd |
+      | Missing Special Char | Passw0rd |
+      | Missing Number       | P@ssword |
+      | Less Than 8 char     | P@ssw0r  |
 
 
