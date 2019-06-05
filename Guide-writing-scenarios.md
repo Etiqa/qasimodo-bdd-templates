@@ -8,7 +8,7 @@ Keep always in mind to write your scenarios so that people who do not know the f
 
 Usually as you get started writing feature files you might be tempted to write them with a _procedure-driven_ mindset, which is just step-by-step instructions
 with actions and expected results. 
-Let's say you are asked to write an scenario describing the Login to QAsimodo procedure. Usually before writing the scenario you first think on the whole process as follows:
+Let's say you are asked to write a scenario describing the Login to QAsimodo procedure. Usually before writing the scenario you first think on the whole process as follows:
 1. Open a web browser -> Once the browser opens successfully you go to 2.
 2. Go to QAsimodo login page -> Once the page is loaded you go to 3
 3. Enter Username and Password 
@@ -16,10 +16,10 @@ Let's say you are asked to write an scenario describing the Login to QAsimodo pr
 
 And after that you write the scenario as the following example:
 
-    BAD EXAMPLE! This Feature is just to show how procedure-driven scenarios are written! Avoid writing scenarios like this
+    BAD EXAMPLE! This Feature is just to show how procedure-driven scenarios are written! Avoid writing scenarios like this!
     
     Feature: Login into QAsimodo
-      As a Mark the Tester
+      As Mark the Tester
       I want to be able to login in QAsimodo
       So that I am able to use the Application
     
@@ -27,7 +27,7 @@ And after that you write the scenario as the following example:
       - Username and password are mandatory to login
       - Registered users are able to login
     
-      Scenario: Login successful - (Procedural Example)
+      Scenario: Successful Login - (Procedural Example)
         Given I am Mark the Tester
         And I have a valid account on QAsimodo with the following credentials:
           | Username | Password |
@@ -37,14 +37,14 @@ And after that you write the scenario as the following example:
         Then I should land on Qasimodo Sign In page
         When I enter "Mark" into the Username text field
         And I enter "Pass" into the Password text field
-        And I click in "Login" button
+        And I click on "Login" button
         Then I should be logged in
   
-Avoid writing Scenarios like the above one, in which each step is like a traditional test. Behavior-driven is not just put BDD buzzwords in front of each step
-but instead the idea is describe how your feature should behave under some conditions, through examples. Do you think the previous scenario is concise and clear to easily 
+Avoid writing Scenarios like the above one, in which each step is like a traditional test. Behavior-driven is not just putting BDD buzzwords in front of each step
+but instead the idea is describing how your feature should behave under some conditions, through examples. Do you think the previous scenario is concise and clear to easily 
 understand the feature behavior? 
 
-Procedure-driven scenarios like the previous one, lead to write extremely long scenarios and generate confusion within the team. Moreover, by writing
+Procedure-driven scenarios lead to write extremely long scenarios and generate confusion within the team. Moreover, by writing
 procedural scenarios, you are tracing a path covering multiple system behaviours.    
 
 An advice is **writing declarative steps** instead of imperative steps. For example, the steps: "When I open a web browser and I navigate to "https://{mydomain}.qasimodo.io"" "
@@ -56,18 +56,18 @@ Actually there are two features covered:
 1. Direct navigation to QAsimodo sign in page
 2. Login into QAsimodo
 
-The advice here is split your scenarios in a way that **one scenario covers one behavior**, so any time you write more than one When-Then pair, try to
+The advice here is to split your scenarios in a way that **one scenario covers one behavior**, so any time you write more than one When-Then pair, try to
 write separate scenarios. (This is not a rule! Some scenarios cannot be split but be aware about duplicating behaviors). 
 
-Be careful as well of writing behaviors that are not part of your feature. For instance, the direct navigation to QAsimodo is a behavior of other feature
-and has nothing to do with the Login one. 
+Be careful as well of writing behaviors that are not part of your feature. For instance, the direct navigation to QAsimodo is a behavior of another feature
+and has nothing to do with the Login. 
 
 The correct Login feature file should look as follows (Recall our simple login example):
 
     Simple Example: Successful Login
     
     Feature: Login into QAsimodo - Simple Example
-      As a Mark the Tester
+      As Mark the Tester
       I want to be able to login in QAsimodo
       So that I am able to use the Application
     
@@ -75,7 +75,7 @@ The correct Login feature file should look as follows (Recall our simple login e
       - Username and password are mandatory to login
       - Registered users are able to login
     
-      Scenario: Login successful - (Simple Example)
+      Scenario: Successful Login - (Simple Example)
         Given I am Mark the Tester
         And I have a valid account on QAsimodo with the following credentials:
           | Username | Password |
@@ -93,7 +93,7 @@ to determine the best implementation of the feature.
 For example, users "submit authentication credentials", they do not "click the submit button". Review the _Bad Example_ shown before and find others steps
 that describe the "how" and not the "what".
 
-Avoid to describe user interaction with the UI and specifying the implementation. Making this, you do not limit your team neither your feature/application implementation.
+Avoid to describe the user interaction with the UI and to specify the implementation. Doing so, you won’t limit your team neither your feature/application implementation
 
 If you are describing the implementation or writing technical details, stop a second and ask yourself: "What for?" or "Why?" is the feature needed/wanted. This will help you to have
 a broader perspective, making easier to describe the feature's behavior.
@@ -102,16 +102,16 @@ a broader perspective, making easier to describe the feature's behavior.
 
 Keep in mind the purpose of each keyword when writing steps.   
     
-    |**Keyword**| **Purpose**                                                                       |
-    | Given     | Use the given step to define the inital state                                     |  
-    | When      | Define the action performed by the user/actor that will trigger the reward/benefit|
-    | Then      | Define the expected outcome from the action taken by the user in the _When_ step  |    
+    |**Keyword**| **Purpose**                                                                        |
+    | Given     | Use the given step to define the initial state                                     |  
+    | When      | Define the action performed by the user/actor that will trigger the reward/benefit |
+    | Then      | Define the expected outcome from the action taken by the user in the _When_ step   |    
 
-Avoid writing actions in the Given steps. They are meant to define an initial state not exercise a behavior. You should write Given steps in present or present perfect tense.
+Avoid writing actions in the Given steps. They are meant to define an initial state, not to exercise a behavior. You should write Given steps in present or present perfect tense.
 
-When steps are meant to indicate that an action is presently happening, so write When steps using action present tense. (avoid past tense)
+When steps are meant to indicate that an action is happening presently, write When steps using action present tense. (avoid past tense)
 
-Then steps should not be written as a future tense since this leads to be more procedural (imperative) over behavioral (declarative). Write your Then tenses in present and using some conditionals when required.  
+Then steps should not be written as a future tense since this leads to be more procedural (imperative) over behavioral (declarative). Write your Then steps in present and using some conditionals when required.  
 
 
 

@@ -1,6 +1,6 @@
 # Example: Adding Non Functional Requirements
 Feature: Login into QAsimodo
-  As a Mark the Tester
+  As Mark the Tester
   I want to be able to login in QAsimodo
   So that I am able to use the Application
 
@@ -11,7 +11,7 @@ Feature: Login into QAsimodo
   - Wrong authentication follow OWASP standards: System should answer in the same way for every failed attempt of authentication (Examples: wrong username, wrong password)
   - User is guided when both username and password credentials are missing
 
-  Scenario: Login successful
+  Scenario: Successful Login
     Given I am Mark the Tester
     And I have a valid account on QAsimodo with the following credentials:
       | Username | Password |
@@ -19,7 +19,7 @@ Feature: Login into QAsimodo
     When I correctly submit my account credentials
     Then I should be logged in
 
-  Scenario: Login unsuccessful - Unregistered User
+  Scenario: Unsuccessful Login - Unregistered User
     Given I am Lauren the Tester
     And I do not have an account on QAsimodo
     When I try to login guessing credentials
@@ -44,7 +44,7 @@ Feature: Login into QAsimodo
       | Password   |
 
   @usability
-  Scenario: Login unsuccessful - Missing authentication credentials
+  Scenario: Unsuccessful Login - Missing authentication credentials
     Given I am Mark the Tester
     And I have a valid account on QAsimodo with the following credentials:
       | Username | Password |

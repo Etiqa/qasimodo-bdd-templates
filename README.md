@@ -30,15 +30,15 @@ and with a little practice you'll be able to write your own. Have a look:
     _When_ some action is performed by the actor  
     _Then_ some testable outcome is achieved
 
-As you can see, the Feature has a title and a description. It's a good practice to describe the feature through an Agile user story and the Acceptance Criteria.
+As you can see, the Feature has a title and a description. Although optional, it's a good practice to describe the feature through an Agile User Story and the Acceptance Criteria.
 The feature can contain one or more _Scenario_ sections (each with a unique title), describing how a feature should behave in different situations or
 with different input parameters.  
 _Scenarios_ follow the **Given - When - Then** structure and each _keyword_ has a purpose:
 
-    |**Keyword**| **Purpose**                                                                       |
-    | Given     | Use the given step to define the inital state                                     |  
-    | When      | Define the action performed by the user/actor that will trigger the reward/benefit|
-    | Then      | Define the expected outcome from the action taken by the user in the _When_ step  |
+    |**Keyword**| **Purpose**                                                                        |
+    | Given     | Use the given step to define the initial state                                     |  
+    | When      | Define the action performed by the user/actor that will trigger the reward/benefit |
+    | Then      | Define the expected outcome from the action taken by the user in the _When_ step   |
 
 
 

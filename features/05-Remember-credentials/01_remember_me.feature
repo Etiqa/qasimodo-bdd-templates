@@ -1,5 +1,5 @@
 Feature: Remember login credentials
-  As a Mark the Tester
+  As Mark the Tester
   I want the system be able to save my QAsimodo login credentials
   So that I am able to access the Application in a fast way
 

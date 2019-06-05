@@ -1,6 +1,6 @@
 # BAD EXAMPLE! This Feature is just to show how procedure-driven scenarios are written! Avoid writing scenarios like this
 Feature: Login into QAsimodo - (Procedural Example)
-  As a Mark the Tester
+  As Mark the Tester
   I want to be able to login in QAsimodo
   So that I am able to use the Application
 
@@ -8,7 +8,7 @@ Feature: Login into QAsimodo - (Procedural Example)
   - Username and password are mandatory to login
   - Registered users are able to login
 
-  Scenario: Login successful - (Procedural Example)
+  Scenario: Successful Login - (Procedural Example)
     Given I am Mark the Tester
     And I have a valid account on QAsimodo with the following credentials:
       | Username | Password |

@@ -4,7 +4,7 @@
 Let’s take a look at simple example of a user signing into QAsimodo.
 
     Feature: Login into QAsimodo - Simple Example
-      As a Mark the Tester
+      As Mark the Tester
       I want to be able to login in QAsimodo
       So that I am able to start a private testing session.
     
@@ -20,23 +20,23 @@ Let’s take a look at simple example of a user signing into QAsimodo.
         When I correctly submit my account credentials  
         Then I should be logged in
     
-This a complete feature file following the format introduced before. It starts with a required Feature (that is login to QAsimodo) and its description (the user story),
-telling us who is the target user or (role), the feature user wants and the reward the user will get. The acceptance criteria are an intrinsic part of the story
-and define the scope of its behavior, giving a share definition, within the team, of when the story can be considered as "done".  
+This a complete feature file following the format introduced [before](Link to Writting good scenarios section). It starts with a required Feature (that is Login into QAsimodo) and its description (the user story),
+telling us who is the target user (or role), the feature user would like to have and the reward the user will get. The acceptance criteria are an intrinsic part of the story
+and define the scope of its behavior, giving a shared definition, within the team, of when the story can be considered as "done".  
 
-The scenario should be written in a way that even people who do not know the feature will understand it. If you see the scenario in the example above, it's descriptive and concise 
-and has been wrote in a way that even a non-technical person can understand how the Login feature should behave under a certain condition. So, write your
-scenarios describing feature's behavior in way that is clear to all your team members and you will dispel misunderstandings and ambiguity.
+The scenario should be written so that even those who do not know the feature will understand it. If you see the scenario in the example above, it's descriptive and concise 
+and has been written in a way that even a non-technical person can understand how the Login feature should behave under a certain condition. So, write your
+scenarios describing the feature's behavior in a way that is clear to all your team members and you will dispel misunderstandings and ambiguity.
 
 For sure this feature has more Acceptance Criteria and therefore Scenarios to be considered, and we will be working on them as we go forward in this guide.   
-Think a second about which other behavior should be done by the Login feature! That's it. Login feature should not allow unregistered users to sign into QAsimodo,
-so you must update the Acceptance Criteria and add an Scenario as follow:
+Think a second about which other behavior should be considered for the Login feature! That's it. Login feature should not allow unregistered users to sign into QAsimodo,
+so you must update the Acceptance Criteria and add a Scenario as follows:
 
     
-    Behavioral Approach of Login feature. Just Functional Requirements
+    Behavioral Approach of Login feature. Only Functional Requirements
     
     Feature: Login into QAsimodo - Behavioral
-      As a Mark the Tester
+      As Mark the Tester
       I want to be able to login in QAsimodo
       So that I am able to use the Application
     
@@ -91,7 +91,7 @@ The above will be the scenarios you should add to your feature file! Don't forge
     Example: Adding Non Functional Requirements
     
     Feature: Login into QAsimodo
-      As a Mark the Tester
+      As Mark the Tester
       I want to be able to login in QAsimodo
       So that I am able to use the Application
     
