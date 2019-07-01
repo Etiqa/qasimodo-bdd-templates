@@ -38,7 +38,11 @@ _Scenarios_ follow the **Given - When - Then** structure and each _keyword_ has 
     | Keyword   | Purpose                                                                            |
     | Given     | Use the given step to define the initial state                                     |  
     | When      | Define the action performed by the user/actor that will trigger the reward/benefit |
-    | Then      | Define the expected outcome from the action taken by the user in the _When_ step   |
+    | Then      | Define the expected outcome from the action taken by the user in the When step     |
+    
+
+
+Do you want to learn how to write good feature files? Go to the [Best Practices](https://github.com/Etiqa/qasimodo-bdd-templates/blob/master/Guide-writing-scenarios.md) document.
 
 
 

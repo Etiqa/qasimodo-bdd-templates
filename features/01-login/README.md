@@ -143,7 +143,7 @@ Absolutely yes! The scope is to make others understand that when logging in with
 be displayed by the system for security reasons. Moreover, see how _declarative_ the scenario is even describing NFR. [(How to write good scenarios)](TBD)
 
 You can detail your feature file through scenarios, deeper and deeper, as you need! It's up to you and the requirements that your feature or
-system needs, in order to achieve the customer reward/satisfaction. Feel free to explore our [**_BDD Templates Library_**](tbd)! There, you will find
+system needs, in order to achieve the customer reward/satisfaction. Feel free to explore our [**_BDD Templates Library_**](https://github.com/Etiqa/qasimodo-bdd-templates/tree/master/features)! There, you will find
 many useful examples of feature files that will help you write your owns.
 
 

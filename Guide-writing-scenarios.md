@@ -114,9 +114,8 @@ When steps are meant to indicate that an action is happening presently, write Wh
 Then steps should not be written as a future tense since this leads to be more procedural (imperative) over behavioral (declarative). Write your Then steps in present and using some conditionals when required.  
 
 
-
-
-
+Feel free to explore our [**_BDD Templates Library_**](https://github.com/Etiqa/qasimodo-bdd-templates/tree/master/features)! There, you will find
+many useful examples of feature files that will help you write your owns. 
 
 
 
