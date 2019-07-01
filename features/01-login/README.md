@@ -140,7 +140,7 @@ _For information about how to manage tags in QAsimodo (Ex: @security) click [her
 
 Was the scenario written as you thought? Do you think a non-technical person will understand (through the examples) how the Login feature should behave under the NFR? 
 Absolutely yes! The scope is to make others understand that when logging in with wrong username or password, the same outcome (error message) should 
-be displayed by the system for security reasons. Moreover, see how _declarative_ the scenario is even describing NFR. [(How to write good scenarios)](TBD)
+be displayed by the system for security reasons. Moreover, see how _declarative_ the scenario is even describing NFR. [(How to write good scenarios)](https://github.com/Etiqa/qasimodo-bdd-templates/blob/master/Guide-writing-scenarios.md)
 
 You can detail your feature file through scenarios, deeper and deeper, as you need! It's up to you and the requirements that your feature or
 system needs, in order to achieve the customer reward/satisfaction. Feel free to explore our [**_BDD Templates Library_**](https://github.com/Etiqa/qasimodo-bdd-templates/tree/master/features)! There, you will find
