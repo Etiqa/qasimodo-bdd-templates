@@ -20,7 +20,7 @@ Let’s take a look at simple example of a user signing into QAsimodo.
         When I correctly submit my account credentials  
         Then I should be logged in
     
-This a complete feature file following the format introduced [before](Link to Writting good scenarios section). It starts with a required Feature (that is Login into QAsimodo) and its description (the user story),
+This a complete feature file following the format introduced [before](https://github.com/Etiqa/qasimodo-bdd-templates/blob/master/README.md). It starts with a required Feature (that is Login into QAsimodo) and its description (the user story),
 telling us who is the target user (or role), the feature user would like to have and the reward the user will get. The acceptance criteria are an intrinsic part of the story
 and define the scope of its behavior, giving a shared definition, within the team, of when the story can be considered as "done".  
 
