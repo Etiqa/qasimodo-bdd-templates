@@ -102,7 +102,7 @@ a broader perspective, making easier to describe the feature's behavior.
 
 Keep in mind the purpose of each keyword when writing steps.   
     
-    |**Keyword**| **Purpose**                                                                        |
+    |Keyword    | Purpose                                                                            |
     | Given     | Use the given step to define the initial state                                     |  
     | When      | Define the action performed by the user/actor that will trigger the reward/benefit |
     | Then      | Define the expected outcome from the action taken by the user in the _When_ step   |    

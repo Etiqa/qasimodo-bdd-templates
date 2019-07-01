@@ -1,7 +1,7 @@
 Feature: Remember login credentials
-  As Mark the Tester
-  I want the system be able to save my QAsimodo login credentials
-  So that I am able to access the Application in a fast way
+  As the system
+  I should be able to save any user’s QAsimodo login credentials
+  So that users are able to access the Application in a fast way
 
   Make sure:
   - Users are able to enable the 'remember me' service
@@ -19,7 +19,7 @@ Feature: Remember login credentials
 
   Scenario: User should be able to login into QAsimodo with 'Remembered' credentials
     Given I am Mark the Tester
-    And the system have saved my authentication credentials
+    And the system has saved my authentication credentials
     When I login with the remembered credentials
     Then I should be logged in
 

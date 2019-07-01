@@ -1,5 +1,5 @@
 Feature: Update password
-  As a Lauren the Tester
+  As Lauren the Tester
   I want to be able to update my password
   So that I can keep my account secure
 
@@ -8,15 +8,16 @@ Feature: Update password
   - It's possible to access to QAsimodo with the updated password
   - It's not possible to access to QAsimodo with old password
   - Password cannot be updated until user provides the current password
-  - Password follow security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-  - Password is required twice before is reset to avoid mistyping (Password is reset only if both passwords match)
+  - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
+  - Password is required twice before it is reset to avoid mistyping (Password is reset only if both passwords match)
 
   Scenario: Updating password successfully
     Given I am Lauren the Tester
     And I am logged into QAsimodo
     When I request to update my password
     And I submit my current password
-    And I correctly set a new password that follow the security standard
+    And I correctly set a new password that follows the security standard
+    And I confirm my new password
     Then the system should update my password
 
   Scenario: Users should be able to access to QAsimodo with the updated password
