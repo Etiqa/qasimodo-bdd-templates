@@ -62,7 +62,7 @@ so you must update the Acceptance Criteria and add a Scenario as follows:
 Simple right? From a Behavioral point of view, a _login feature_ should allow or not allow access (under some conditions) to the application. So 
 the login feature should be complete now since the functional requirements have been covered.
 
-## BDD for Non-functional Requirements
+## BDD for Non-Functional Requirements
 Non-functional requirements (NFR), known as 'quality attributes', specify criteria that can be used to evaluate the system operation instead of a 
 specific behavior. NFRs define how a system is supposed to be, rather than what a system is supposed to do. Some NFRs examples are:  
 * Security

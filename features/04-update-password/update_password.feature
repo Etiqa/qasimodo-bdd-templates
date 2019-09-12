@@ -9,7 +9,7 @@ Feature: Update password
   - It's not possible to access to QAsimodo with old password
   - Password cannot be updated until user provides the current password
   - Password follows security standards: more than 7 characters, one lower case and one upper case alpha character [a-z, A-Z], one numeric character [0-9], and one non-alphanumeric character [example: !@#$%^&*()].
-  - Password is required twice before it is reset to avoid mistyping (Password is reset only if both passwords match)
+  - New Password is required twice before it is reset to avoid mistyping (Password is reset only if both passwords match)
 
   Scenario: Updating password successfully
     Given I am Lauren the Tester
